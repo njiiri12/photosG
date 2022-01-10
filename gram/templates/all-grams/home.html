@@ -1,0 +1,37 @@
+{%extends 'all-grams/base.html'%} {% block content %} {{block.super}}
+
+<div class="row">
+    <div class="col-1" style="width:20%;">
+        {% include "options.html" %}
+    </div>
+    <div class="col-2" style="width:70%;height: 30vh;">
+        {% include "stories.html" %}
+        <div class="container">
+            {%for post in post %}
+            <a href="#" style="list-style: none;text-decoration: none;">
+                <div class="card" style="background-color:transparent;width: 70px;height: 70px;border-radius: 50px;margin-bottom: 50px;">
+                    <img style="width: 70px;height: 70px;border-radius: 50px;" src="{{profile.profile_pic.url}}">
+                </div>
+                <h5 style="margin-left: 80px;margin-top:-95px ;">{{ profile.username}}</h5>
+            </a>
+
+            <a href="{% url 'single_post' post.pk%}">
+                <img src="{{post.image.url}}" style="margin-top:50px;width:80%;height: 60vh;">
+            </a>
+            <br>
+            <h6 style="margin-top:20px;">{{post.get_likes_total}}likes</h6>
+            <a class="btn btn-danger" href="{% url 'like' post.pk %}">like</a>
+
+            <h5 style="margin-top: 50px;margin-left: 20px;margin-bottom: 40px;">{{post.description}}</h5>
+            {%endfor%}
+
+
+        </div>
+
+
+
+
+    </div>
+</div>
+</div>
+{% endblock %}

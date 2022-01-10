@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            margin: 0;
+        }
+        
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 25%;
+        }
+        
+        li a {
+            display: block;
+            background-color: transparent;
+            height: 5vh;
+            margin-left: 40px;
+            margin-top: 60px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'explore' %}">Explore</a></li>
+        <li><a href="{% url 'make_a_post' %}">Make a Post</a></li>
+        <li><a href="{% url 'profile' %}">Profile</a></li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+{%extends 'all-grams/base.html'%} {% block content %} {{block.super}}
+<div class="contaner" style="margin: 15%;">
+    <div class="row">
+
+    <div class="col-md-5">
+        <h2>Welcome to Ingram</h2>
+    </div>
+    <div class="col-md-7">
+        <h4>Life is beautiful not because of the things we see or do. Life is beautiful because of the people we meet. Simon Sinek</h4>
+        <p>Why not join the ingram fam? Just a signup and login away to become part of the family.</p>
+        <a class="btn btn-danger" href="{% url 'register' %}">Sign up</a>
+    </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

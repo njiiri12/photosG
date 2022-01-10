@@ -1,0 +1,40 @@
+{%extends 'all-grams/base.html'%} {% block content %} {{block.super}}
+<div class="row">
+    <div class="col-1" style="width:30%;">
+        {% include "options.html" %}
+    </div>
+    <div class="col-2" style="width:70%;height: 30vh;">
+        <div class="card" style="width: 220px;height: 220px;border-radius: 150px;margin-top: 5%;">
+            {% if profile.profile_pic %}
+            <img style="width: 220px;height: 220px;border-radius: 150px;" src=" {{profile.profile_pic.url}} "> {% endif %}
+        </div>
+        <br>
+        <h2>{{profile.username}}</h2>
+        <br>
+        <h4>{{profile.bio}}</h4>
+        <br>
+
+        <form action="{% url 'follow' profile.pk %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" , name="prfoile_id" , value="{{profile_id}}" , class="btn btn-info ">Follow</button>
+        </form>
+        <br>
+        <a class="btn btn-primary " href="{% url 'update_profile' %} ">Edit Profile</a>
+        <br>
+        <h3>{{profile.get_follows_total}} Followers</h3>
+        <hr style="width: 80%;">
+        <h4>Posts</h4>
+        {% for post in post %}
+        <a href="">
+            <img src="{{post.image.url}}" style="width: 25%;height: 30vh;">
+        </a>{%endfor%}
+
+    </div>
+
+
+
+
+
+</div>
+</div>
+{% endblock %}

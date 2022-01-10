@@ -1,0 +1,10 @@
+{%extends 'all-grams/base.html'%} {% block content %} {{block.super}}
+<div class="container" style="margin:8%;">
+    <h1>Make your post</h1>
+    <form action="{% url 'make_a_post' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %} {{form.as_p}}
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <br>
+    </form>
+</div> {% endblock %}

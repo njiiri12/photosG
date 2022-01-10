@@ -1,0 +1,15 @@
+{%extends 'all-grams/base.html'%} {% block content %} {{block.super}}
+<div class="row">
+    <div class="col-1" style="width:20%;">
+        {% include "options.html" %}
+    </div>
+    <div class="col-2" style="width:80%;height: 30vh;">
+        {% include "search.html" %} {% for post in post %}
+        <a href="{% url 'single_post' post.pk%}">
+            <img src="{{post.image.url}}" style="width: 25%;height: 30vh;background-color: blue;"> {%endfor%}
+        </a>
+
+
+    </div>
+</div>
+{% endblock %}

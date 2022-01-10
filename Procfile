@@ -1,0 +1,1 @@
+web: gunicorn Ingram.wsgi --log-file -
